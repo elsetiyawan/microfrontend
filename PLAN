@@ -1,0 +1,31 @@
+create 3 frontend application 
+app 1
+- react
+- ant design
+
+app 2
+- next
+- ant design (tailwind if possible)
+
+app 3
+- remix
+- ant design (material design if
+
+
+Every app will have 2 screen,
+1. login screen
+2. main screen
+
+Every app will have 3 component
+1. login component
+2. header component
+3. main component
+
+app 1 will act as the "orchestrator"
+app 2 main screen will be available under app 1 menu
+app 3 main screen will be available under app 1 menu
+
+
+==========================
+app 1
+- npx create-react-app app_1
