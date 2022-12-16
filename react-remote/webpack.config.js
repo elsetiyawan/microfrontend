@@ -8,18 +8,12 @@ module.exports = {
         extensions: ['.jsx', '.js', '.css']
     },
     devServer: {
-        port: 8081,
-        historyApiFallback: true
+        port: 8082,
+        historyApiFallback: true // so yu can go to direct url
     },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                type: 'javascript/auto',
-                resolve: {
-                    fullySpecified: false
-                }
-            },
+            //loader for jsx
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
@@ -37,8 +31,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html',
-            manifest: './public/manifest.json',
-            favicon: './public/favicon.ico'
+            favicon: './public/favicon.ico',
+            manifest: './public/manifest.json'
         })
     ]
 }
