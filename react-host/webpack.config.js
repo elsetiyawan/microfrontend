@@ -42,7 +42,7 @@ module.exports = {
             name: 'host',
             filename: 'remoteEntry.js',
             remotes: {
-                remote: 'remote@http://localhost:8081/remoteEntry.js',
+                reactRemoteModule: 'reactRemoteModule@http://localhost:8081/remoteEntry.js',
                 reactRemoteAntd: 'reactRemoteAntd@http://localhost:8082/remoteEntry.js'
             },
             exposes: {},

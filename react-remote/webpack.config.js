@@ -32,10 +32,10 @@ module.exports = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'remote',
+            name: 'reactRemoteModule',
             filename: 'remoteEntry.js',
             exposes: {
-                './Home': './src/pages/Home'
+                './ReactRemoteApp': './src/pages/Home'
             },
             shared: {
                 ...deps,

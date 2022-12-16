@@ -1,8 +1,8 @@
 import React from 'react'
-import Home from 'remote/Home';
+import ReactRemoteApp from 'reactRemoteModule/ReactRemoteApp';
 
 const ReactRemote = () => {
-    return <Home/>;
+    return <ReactRemoteApp/>;
 
 }
 
