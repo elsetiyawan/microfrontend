@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const deps = require("./package.json").dependencies;
 
 module.exports = {
     entry: './src/index',
@@ -29,6 +31,28 @@ module.exports = {
         ]
     },
     plugins: [
+        new ModuleFederationPlugin({
+            name: 'reactRemoteAntd',
+            filename: 'remoteEntry.js',
+            exposes: {
+                './Home': './src/pages/Home'
+            },
+            shared: {
+                ...deps,
+                react: {
+                    singleton: true,
+                    requiredVersion: deps.react,
+                },
+                antd: {
+                    singleton: true,
+                    requiredVersion: deps.antd
+                },
+                "react-dom": {
+                    singleton: true,
+                    requiredVersion: deps["react-dom"],
+                },
+            },
+        }),
         new HtmlWebpackPlugin({
             template: './public/index.html',
             favicon: './public/favicon.ico',
