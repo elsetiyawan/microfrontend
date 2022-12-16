@@ -1,8 +1,9 @@
 import React from 'react'
+import Simple from 'remote/Simple';
 
 const ReactRemote = () => {
     return <div className='wrapper'>
-        the remote app is here
+        <Simple />
     </div>
 }
 

@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
 module.exports = {
     entry: './src/index',
@@ -8,7 +9,7 @@ module.exports = {
         extensions: ['.jsx', '.js', '.css']
     },
     devServer: {
-        port: 8081,
+        port: 8080,
         historyApiFallback: true
     },
     module: {
@@ -35,6 +36,22 @@ module.exports = {
         ]
     },
     plugins: [
+        // new ModuleFederationPlugin({
+        //     name: 'host',
+        //     filename: 'remoteEntry.js',
+        //     remotes: {
+        //         remote: 'remote@http://localhost:8082/remoteEntry.js'
+        //     }
+        // }),
+        new ModuleFederationPlugin({
+            name: 'host',
+            filename: 'remoteEntry.js',
+            remotes: {
+                remote: 'remote@http://localhost:8081/remoteEntry.js',
+            },
+            exposes: {},
+            shared: {},
+        }),
         new HtmlWebpackPlugin({
             template: './public/index.html',
             manifest: './public/manifest.json',
