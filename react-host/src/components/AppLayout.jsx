@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const Layout = (props) => {
     return (
@@ -6,8 +7,8 @@ const Layout = (props) => {
             <div>
                 <nav className='navbar'>
                     <ul>
-                        <li><a>Home</a></li>
-                        <li><a>App Remote</a></li>
+                        <li><Link to="/home">Home</Link></li>
+                        <li><Link to="/remote_1">App Remote</Link></li>
                     </ul>
                 </nav>
             </div>

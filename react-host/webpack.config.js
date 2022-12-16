@@ -7,6 +7,10 @@ module.exports = {
     resolve: {
         extensions: ['.jsx', '.js', '.css']
     },
+    devServer: {
+        port: 8081,
+        historyApiFallback: true
+    },
     module: {
         rules: [
             {
