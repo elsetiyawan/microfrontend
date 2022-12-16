@@ -4,6 +4,7 @@ import AppLayout from "./components/AppLayout";
 import {Outlet, Route, Routes} from "react-router-dom";
 import Login from "./pages/Login";
 import ReactRemote from "./pages/ReactRemote";
+import ReactRemoteAntd from "./pages/ReactRemoteAntd";
 
 const App = () => {
     return <Routes>
@@ -11,6 +12,7 @@ const App = () => {
         <Route element={<AppLayout><Outlet/></AppLayout>}>
             <Route path="/home" element={<Home/>}/>
             <Route path="/react-remote" element={<ReactRemote/>}/>
+            <Route path="/react-remote-antd" element={<ReactRemoteAntd/>}/>
         </Route>
     </Routes>;
 

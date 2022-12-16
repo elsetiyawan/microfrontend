@@ -9,6 +9,7 @@ const Layout = (props) => {
                     <ul>
                         <li><Link to="/home">Home</Link></li>
                         <li><Link to="/react-remote">React Remote</Link></li>
+                        <li><Link to="/react-remote-antd">React Remote Antd</Link></li>
                     </ul>
                 </nav>
             </div>
