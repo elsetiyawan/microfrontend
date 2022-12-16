@@ -14,3 +14,11 @@ understanding babel and webpack is a must.
 3. In the remote, setup module federation plugin to expose those files
 4. In the host, decide which file we want to get from the remote
 5. In the host, setup module federation to fetch those files
+
+=============================
+
+challanges
+1. webpack
+2. share dependency
+3. share css
+4. webpack-dev-server running twice

@@ -1,10 +1,9 @@
 import React from 'react'
-import Simple from 'remote/Simple';
+import Home from 'remote/Home';
 
 const ReactRemote = () => {
-    return <div className='wrapper'>
-        <Simple />
-    </div>
+    return <Home/>;
+
 }
 
 export default ReactRemote;

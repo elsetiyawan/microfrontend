@@ -8,7 +8,7 @@ module.exports = {
         extensions: ['.jsx', '.js', '.css']
     },
     devServer: {
-        port: 8083,
+        port: 8082,
         historyApiFallback: true // so yu can go to direct url
     },
     module: {

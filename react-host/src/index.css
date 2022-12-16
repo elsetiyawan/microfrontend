@@ -45,6 +45,7 @@ code {
     display: flex;
     height: 100vh;
     padding: 20px;
+    width: 100%;
 }
 
 .screenSegment {

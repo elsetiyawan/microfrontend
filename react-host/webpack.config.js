@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
+const deps = require("./package.json").dependencies;
+
 module.exports = {
     entry: './src/index',
     cache: false,
@@ -36,13 +38,6 @@ module.exports = {
         ]
     },
     plugins: [
-        // new ModuleFederationPlugin({
-        //     name: 'host',
-        //     filename: 'remoteEntry.js',
-        //     remotes: {
-        //         remote: 'remote@http://localhost:8082/remoteEntry.js'
-        //     }
-        // }),
         new ModuleFederationPlugin({
             name: 'host',
             filename: 'remoteEntry.js',
@@ -50,7 +45,17 @@ module.exports = {
                 remote: 'remote@http://localhost:8081/remoteEntry.js',
             },
             exposes: {},
-            shared: {},
+            shared: {
+                ...deps,
+                react: {
+                    singleton: true,
+                    requiredVersion: deps.react,
+                },
+                "react-dom": {
+                    singleton: true,
+                    requiredVersion: deps["react-dom"],
+                },
+            },
         }),
         new HtmlWebpackPlugin({
             template: './public/index.html',
