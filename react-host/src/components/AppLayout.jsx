@@ -8,7 +8,7 @@ const Layout = (props) => {
                 <nav className='navbar'>
                     <ul>
                         <li><Link to="/home">Home</Link></li>
-                        <li><Link to="/remote_1">App Remote</Link></li>
+                        <li><Link to="/react-remote">React Remote</Link></li>
                     </ul>
                 </nav>
             </div>

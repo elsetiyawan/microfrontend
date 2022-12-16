@@ -44,11 +44,11 @@ code {
 .wrapper {
     display: flex;
     height: 100vh;
+    padding: 20px;
 }
 
 .screenSegment {
     flex: 1;
-    margin: 20px;
 }
 
 .loginScreen {
