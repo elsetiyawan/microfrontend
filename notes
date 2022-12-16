@@ -1,0 +1,8 @@
+react-host
+
+need to setup the webpack manually since we need to use module federation
+
+npm install --save-dev @babel/core @babel/preset-react babel-loader css-loader style-loader webpack webpack-cli webpack-dev-server html-webpack-plugin file-loader
+need to import react for every pages
+
+understanding babel and webpack is a must.
