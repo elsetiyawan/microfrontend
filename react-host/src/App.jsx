@@ -5,6 +5,7 @@ import {Outlet, Route, Routes} from "react-router-dom";
 import Login from "./pages/Login";
 import ReactRemote from "./pages/ReactRemote";
 import ReactRemoteAntd from "./pages/ReactRemoteAntd";
+import ReactRemoteTailwind from "./pages/ReactRemoteTailwind";
 
 const App = () => {
     return <Routes>
@@ -13,6 +14,7 @@ const App = () => {
             <Route path="/home" element={<Home/>}/>
             <Route path="/react-remote" element={<ReactRemote/>}/>
             <Route path="/react-remote-antd" element={<ReactRemoteAntd/>}/>
+            <Route path="/react-remote-tailwind" element={<ReactRemoteTailwind/>}/>
         </Route>
     </Routes>;
 

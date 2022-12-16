@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-
 const deps = require("./package.json").dependencies;
+const depsDev = require("./package.json").devDependencies;
 
 module.exports = {
     entry: './src/index',
@@ -11,18 +11,12 @@ module.exports = {
         extensions: ['.jsx', '.js', '.css']
     },
     devServer: {
-        port: 8080,
-        historyApiFallback: true
+        port: 8083,
+        historyApiFallback: true // so yu can go to direct url
     },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                type: 'javascript/auto',
-                resolve: {
-                    fullySpecified: false
-                }
-            },
+            //loader for jsx
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
@@ -33,36 +27,38 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                use: ['style-loader', 'css-loader', 'postcss-loader'],
             }
         ]
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'host',
+            name: 'reactModuleTailwind',
             filename: 'remoteEntry.js',
-            remotes: {
-                reactRemoteModule: 'reactRemoteModule@http://localhost:8081/remoteEntry.js',
-                reactRemoteAntd: 'reactRemoteAntd@http://localhost:8082/remoteEntry.js',
-                reactModuleTailwind: 'reactModuleTailwind@http://localhost:8083/remoteEntry.js'
+            exposes: {
+                './ReactRemoteApp': './src/pages/Home'
             },
-            exposes: {},
             shared: {
                 ...deps,
                 react: {
                     singleton: true,
                     requiredVersion: deps.react,
                 },
+                tailwindcss: {
+                    singleton: true,
+                    requiredVersion: depsDev.tailwindcss
+                },
                 "react-dom": {
                     singleton: true,
                     requiredVersion: deps["react-dom"],
                 },
             },
+
         }),
         new HtmlWebpackPlugin({
             template: './public/index.html',
-            manifest: './public/manifest.json',
-            favicon: './public/favicon.ico'
+            favicon: './public/favicon.ico',
+            manifest: './public/manifest.json'
         })
     ]
 }

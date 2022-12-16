@@ -10,6 +10,7 @@ const Layout = (props) => {
                         <li><Link to="/home">Home</Link></li>
                         <li><Link to="/react-remote">React Remote</Link></li>
                         <li><Link to="/react-remote-antd">Antd React Remote</Link></li>
+                        <li><Link to="/react-remote-tailwind">Tailwind React Remote</Link></li>
                     </ul>
                 </nav>
             </div>
