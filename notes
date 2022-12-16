@@ -6,3 +6,11 @@ npm install --save-dev @babel/core @babel/preset-react babel-loader css-loader s
 need to import react for every pages
 
 understanding babel and webpack is a must.
+
+==================================================
+
+1. Decide which app as the host (container) and the remote
+2. In the remote, decide which modules needs to be available to others
+3. In the remote, setup module federation plugin to expose those files
+4. In the host, decide which file we want to get from the remote
+5. In the host, setup module federation to fetch those files
