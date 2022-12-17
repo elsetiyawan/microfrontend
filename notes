@@ -22,3 +22,5 @@ challanges
 2. share dependency
 3. share css
 4. webpack-dev-server running twice
+5. challanges in implementing tailwind
+6. when a single server down, the whole app is down

@@ -1,0 +1,23 @@
+{
+  "name": "spike-microfrontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "concurrently \"cd react-host; npm run dev\" \"cd react-remote; npm run dev\" \"cd react-remote-antd; npm run dev\" \"cd react-remote-tailwind; npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elsetiyawan/spike-microfrontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elsetiyawan/spike-microfrontend/issues"
+  },
+  "homepage": "https://github.com/elsetiyawan/spike-microfrontend#readme"
+}
