@@ -40,7 +40,7 @@ module.exports = {
             shared: {
                 ...deps,
                 react: {
-                    singleton: true,
+                    singleton: true, // prevent react to deploy multiple times
                     requiredVersion: deps.react,
                 },
                 antd: {

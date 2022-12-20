@@ -24,3 +24,14 @@ challanges
 4. webpack-dev-server running twice
 5. challanges in implementing tailwind
 6. when a single server down, the whole app is down
+7. share authorization
+8. must be independent
+9. security, will that exposed? should not expose the html, need to check is it development or production
+10. react require us to run a single copy (singleton), but what if two different version?
+11. How to group what feature on which squad on which app
+12. need squad to manage the container
+
+
+
+==============================
+why tailwind css doesn't work? coz tailwind is a predefined css, so when we load the page, the css is not included.
